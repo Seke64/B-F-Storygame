@@ -1,0 +1,35 @@
+
+public class Room {
+
+	public int id;
+	
+	public Direction [] directions = new Direction[4];
+	
+	public Room(int anId){
+		id = anId;
+	}
+	
+	public Direction findDirection(String way){
+		for(int i = 0 ; i < 4; i++){
+			if(directions[i] != null && directions[i].way.equals(way)){
+				return directions[i];
+			}
+		}
+		return null;
+	}
+	
+	
+	public String toString(){
+		String roomString = id + " and has the options of\n";
+		
+		for(int i = 0 ; i < 4; i++){
+			if(directions[i] != null){
+				roomString += directions[i].name + " going " + directions[i].way + "\n";
+			}
+		}
+		
+		return roomString;
+		
+	}
+	
+}
