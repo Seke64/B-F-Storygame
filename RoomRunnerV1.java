@@ -5,7 +5,7 @@ public class RoomRunnerV1 {
 	public static void main(String [] args){
 		World world = setupWorld();
 
-		Person sean = new Person("Sean", 15);
+		NewHero sean = new NewHero("Sean", 15);
 		world.currentRoom = world.room2;
 
 		while(world.currentRoom != null){
