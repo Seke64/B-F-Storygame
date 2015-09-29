@@ -9,43 +9,57 @@ public class World
 	
 	Room currentRoom;
 	
-	public void moveFromRoom(Direction direction){
-		if(currentRoom == null){
+	public void moveFromRoom(Direction direction)
+	{
+		if(currentRoom == null)
+		{
 			return;
 		}
 		
-		if(currentRoom.id == 1){
-			if(direction.way.equals("right")){
+		if(currentRoom.id == 1)
+		{
+			if(direction.way.equals("right"))
+			{
 				currentRoom = room2;
 			}
-			if(direction.way.equals("down")){
+			if(direction.way.equals("down"))
+			{
 				currentRoom = room3;
 			}
 		}
 		
-		else if(currentRoom.id == 2){
-			if(direction.way.equals("left")){
+		else if(currentRoom.id == 2)
+		{
+			if(direction.way.equals("left"))
+			{
 				currentRoom = room1;
 			}
-			if(direction.way.equals("down")){
+			if(direction.way.equals("down"))
+			{
 				currentRoom = room4;
 			}
 		}
 
-		else if(currentRoom.id == 3){
-			if(direction.way.equals("up")){
+		else if(currentRoom.id == 3)
+		{
+			if(direction.way.equals("up"))
+			{
 				currentRoom = room1;
 			}
-			if(direction.way.equals("right")){
+			if(direction.way.equals("right"))
+			{
 				currentRoom = room4;
 			}
-			if(direction.way.equals("left")){
+			if(direction.way.equals("left"))
+			{
 				currentRoom = null;
 			}
 		}
 
-		else if(currentRoom.id == 4){
-			if(direction.way.equals("left")){
+		else if(currentRoom.id == 4)
+		{
+			if(direction.way.equals("left"))
+			{
 				currentRoom = room3;
 			}
 		}
