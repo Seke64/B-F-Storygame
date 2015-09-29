@@ -5,11 +5,11 @@ public class RoomRunnerV1 {
 	public static void main(String [] args){
 		World world = setupWorld();
 
-		NewHero sean = new NewHero("Sean", 15);
+		NewHero hero = NewHero.choose();
 		world.currentRoom = world.room2;
 
 		while(world.currentRoom != null){
-			System.out.println(sean.name + " is in room " + world.currentRoom);
+			System.out.println(hero.name + " is in room " + world.currentRoom);
 			System.out.print("WHICH DIRECTION DO YOU WANT TO GO: ");
 			String value = Keyboard.readString();
 			Direction direction = world.currentRoom.findDirection(value);
