@@ -10,6 +10,7 @@ public class RoomRunnerV1 {
 
 		while(world.currentRoom != null){
 			System.out.println(hero.name + " is in room " + world.currentRoom);
+			
 			System.out.print("WHICH DIRECTION DO YOU WANT TO GO: ");
 			String value = Keyboard.readString();
 			Direction direction = world.currentRoom.findDirection(value);
