@@ -9,4 +9,9 @@ public class WorldGenerator
   {
   
   }
+  
+  public static World useHandMade()
+  {
+    
+  }
 }
