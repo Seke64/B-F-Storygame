@@ -2,9 +2,9 @@
 public class Room {
 
 	public int id;
-	pubic final int UP = 1, DOWN = 2, NORTH = 3, EAST = 4, SOUTH = 5, WEST = 6; //Added
-	private boolean[] canMove; //Added
-	private String[] moveVia; //Added
+	pubic final int UP = 0, DOWN = 1, NORTH = 2, EAST = 3, SOUTH = 4, WEST = 5;
+	private int[] canMove;
+	private String[] moveVia;
 	
 	public Direction [] directions = new Direction[4];
 	
@@ -12,10 +12,27 @@ public class Room {
 		id = anId;
 	}
 	
-	//Added this - new way to make rooms?
-	public Room (int anId, boolean[] canMove/*shows if you can move in the 6 direction*/, String[] moveVia/*how you move, like stairs*/)
+	public Room (int anId, int[] _canMove /*-1 if no move in that direction, or room number that connects from that direction*/, String[] _moveVia)
 	{
 		id = anId;
+		canMove = _canMove;
+		moveVia = _moveVia;
+	}
+	
+	public int canGo(int direction)
+	{
+		if (direction >= 0 && direction <= 5)
+			return canMove[direction];
+		else
+			return -2;
+	}
+	
+	public String howGo(int direction)
+	{
+		if (direction >= 0 && direction <= 5)
+			return moveVia[direction];
+		else
+			return null;
 	}
 	
 	public Direction findDirection(String way){
