@@ -1,9 +1,14 @@
 public class Entity
 {
-  private String name;
+  protected String name;
 
   public Entity(String _name)
   {
     name = _name;
+  }
+  
+  public String toString()
+  {
+    return "A " + this.getClass().getName() + " with a name of " + name + ".";
   }
 }
