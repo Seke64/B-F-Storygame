@@ -15,6 +15,18 @@ public class Charcter extends Entity
   {
     return baseStats[stat];
   }
+  
+  public int setBaseStat(int stat, int val)
+  {
+    baseStats[stat] = val;
+    return baseStats[stat];
+  }
+  
+  public int changeBaseStat(int stat, int val)
+  {
+    baseStats[stat] += val;
+    return baseStats[stat];
+  }
 }
   
    
