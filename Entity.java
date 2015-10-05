@@ -1,7 +1,12 @@
 public class Entity
 {
   protected String name;
-
+  
+  public Entity()
+  {
+    name = "DEFAULT";
+  }
+  
   public Entity(String _name)
   {
     name = _name;
