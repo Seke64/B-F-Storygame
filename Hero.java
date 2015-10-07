@@ -36,7 +36,6 @@ public class Hero extends Character
 		for (int i = 0; i < strs.length; i++)
 			for (int j = strs[i].length(); j <= longest; j++)
 				strs[i] += " ";
-
 		return strs;
 	}
 }
