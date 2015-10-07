@@ -38,4 +38,8 @@ public class Hero extends Character
 				strs[i] += " ";
 		return strs;
 	}
+	public static int[] getStat()
+	{
+		return baseStats;
+	}
 }
