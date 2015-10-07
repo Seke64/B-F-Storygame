@@ -41,5 +41,6 @@ public class Hero extends Character
 	public static int[] getStat()
 	{
 		return baseStats;
+		//super.baseStats?
 	}
 }
