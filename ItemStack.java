@@ -21,4 +21,26 @@ public class ItemStack
     
     return false;
   }
+  
+  public int addWhatCan(int num)
+  {
+    int leftOver = numItems + num - itemStack.maxCount;
+    
+    if (leftOver <= 0)
+    {
+      numItems += num;
+    }
+    
+    else
+    {
+      numItems = itemStack.maxCount;
+    }
+    
+    return leftOver;
+  }
+  
+  public int whatIsLeftOver(int num)
+  {
+    return leftOver = numItems + num - itemStack.maxCount;
+  }
 }
