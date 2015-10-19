@@ -27,6 +27,14 @@ public class Charcter extends Entity
     baseStats[stat] += val;
     return baseStats[stat];
   }
+  public static int[] getOtherStat()
+	{
+		int[] otherStat = new int[3];
+		otherStat[0] = level;
+		otherStat[1] = gold;
+		otherStat[2] = xp;
+		return otherStat;
+	}
 }
   
    
