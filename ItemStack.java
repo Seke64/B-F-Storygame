@@ -43,4 +43,9 @@ public class ItemStack
   {
     return leftOver = numItems + num - itemStack.maxCount;
   }
+  
+  public String toString()
+  {
+    return "(" + numItems + ") " + itemStack.name + "- " + itemStack.desc;
+  }
 }
