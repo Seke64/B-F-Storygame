@@ -21,4 +21,14 @@ public class Enemy extends Character
     
     enemies[0][0] = new Enemy("Monster", new int[] {7, 1, 2, 3, 0}, null, 5, 7};
   }
+  
+  public getXpReward()
+  {
+    return xpReward;
+  }
+  
+  public getGoldReward()
+  {
+    return goldReward;
+  }
 }
