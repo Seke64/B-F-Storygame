@@ -15,19 +15,19 @@ public class Enemy extends Character
       desc = "It's a " + name + ".";
   }
   
-  public chooseEnemy(int level)
+  public static Enemy chooseEnemy(int level)
   {
     Enemy[][] enemies = new Enemy[10][10];
     
     enemies[0][0] = new Enemy("Monster", new int[] {7, 1, 2, 3, 0}, null, 5, 7};
   }
   
-  public getXpReward()
+  public static int getXpReward()
   {
     return xpReward;
   }
   
-  public getGoldReward()
+  public static int  getGoldReward()
   {
     return goldReward;
   }
