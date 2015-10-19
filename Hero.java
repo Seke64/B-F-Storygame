@@ -5,7 +5,7 @@ public class Hero extends Character
 	public int gold;
 	public int xp;
 
-	public NewHero(String _name, int[] _baseStats)
+	public Hero(String _name, int[] _baseStats)
 	{
 		super(_name, _baseStats);
 		curHp = this.getBaseStat(MHP);
@@ -14,7 +14,7 @@ public class Hero extends Character
 		xp = 0;
 	}
 
-	public static NewHero choose()
+	public static Hero choose()
 	{
 		Hero hero1 = new Hero("Guy", new int[] {20, 1, 2, 1, 0});
 
@@ -38,9 +38,20 @@ public class Hero extends Character
 				strs[i] += " ";
 		return strs;
 	}
-	public static int[] getStat()
+	public static int[] getBaseStat()
 	{
 		return baseStats;
 		//super.baseStats?
 	}
+	public static int changeGold(int currentGold, int enemyGold)
+	{
+		int gold = currentGold + enemyGold;
+		return gold;
+	}
+	public static int changeXp(int currentXp, int enemyXp)
+	{
+		int xp = currentXp + enemyXp;
+		return xp;
+	}
+	
 }
