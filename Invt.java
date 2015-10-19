@@ -11,19 +11,36 @@ public class Invt
       if (add.devName.equals(i.itemStack.devName) && i.whatIsLeftOver(num) <= 0)
       {
         i.add(num);
-      }
-      
-      else if (add.devName.equals(i.itemStack.devName) && i.whatIsLeftOver(num) > 0)
-      {
-        int left = i.whatIsLeftOver(num);
         
-        while (left > 0)
-        {
-          items.add(new ItemStack(add, 0);
-          
-          left =- i.itemStack.maxCount;
-        }
+        return true;
       }
     }
+    
+    while (num > 0)
+    {
+      if (num > add.maxCount
+      {
+        items.add(new ItemStack(add, add.maxCount);
+        num -= add.maxCount;
+      }
+      
+      else
+      {
+        items.add(new ItemStack(add, num));
+        num -= num;
+      }
+    }
+  }
+  
+  public String toString()
+  {
+    String out = "Inventory:";
+    
+    for (ItemStack is: items)
+    {
+      out += "\n" + is;
+    }
+    
+    return out;
   }
 }
