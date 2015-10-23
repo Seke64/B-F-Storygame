@@ -2,6 +2,8 @@
 public class World 
 {//Don't need
 
+	Room[] rooms = new Room();
+
 	Room room1 = new Room(1);
 	Room room2 = new Room(2);
 	Room room3 = new Room(3);
