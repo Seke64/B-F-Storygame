@@ -8,7 +8,8 @@ public class Room {
 	
 	public Direction [] directions = new Direction[4];
 	
-	public Room(int anId){
+	public Room(int anId)
+	{
 		id = anId;
 	}
 	
@@ -35,9 +36,12 @@ public class Room {
 			return null;
 	}
 	
-	public Direction findDirection(String way){
-		for(int i = 0 ; i < 4; i++){
-			if(directions[i] != null && directions[i].way.equals(way)){
+	public Direction findDirection(String way)
+	{
+		for(int i = 0 ; i < 4; i++)
+		{
+			if(directions[i] != null && directions[i].way.equals(way))
+			{
 				return directions[i];
 			}
 		}
@@ -45,11 +49,14 @@ public class Room {
 	}
 	
 	
-	public String toString(){
+	public String toString()
+	{
 		String roomString = id + " and has the options of\n";
 		
-		for(int i = 0 ; i < 4; i++){
-			if(directions[i] != null){
+		for(int i = 0 ; i < 4; i++)
+		{
+			if(directions[i] != null)
+			{
 				roomString += directions[i].name + " going " + directions[i].way + "\n";
 			}
 		}
