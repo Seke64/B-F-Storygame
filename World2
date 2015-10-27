@@ -1,0 +1,105 @@
+import java.util.*;
+public class World2
+{
+	public int id;
+	public final int UP = 0, DOWN = 1, NORTH = 2, EAST = 3, SOUTH = 4, WEST = 5;
+	private int[] canMove;
+	private String[] moveVia;
+	private static Random Dylan = new Random();
+	private static int[] toRooms = new int[Dylan.nextInt(4)-1];
+
+
+	/*public int[] nextMove = new int[canMove.length];
+	private String[] movetype = new String[canMove.length];
+	*/
+	private Room[] rooms = new Room[5];
+
+	public Room room1 = new Room(0, toRooms, new String[]{"Stairs, ladder, cliff"});
+
+
+	Room room2 = new Room(2);
+	Room room3 = new Room(3);
+	Room room4 = new Room(4);
+
+	Room currentRoom;
+
+	public void moveFromRoom(Direction direction){
+		if(currentRoom == null){
+			return;
+		}
+
+		if(currentRoom.id == 1){
+			if(direction.way.equals("right")){
+				currentRoom = room2;
+			}
+			if(direction.way.equals("down")){
+				currentRoom = room3;
+			}
+		}
+
+		else if(currentRoom.id == 2){
+			if(direction.way.equals("left")){
+				currentRoom = room1;
+			}
+			if(direction.way.equals("down")){
+				currentRoom = room4;
+			}
+		}
+
+		else if(currentRoom.id == 3){
+			if(direction.way.equals("up")){
+				currentRoom = room1;
+			}
+			if(direction.way.equals("right")){
+				currentRoom = room4;
+			}
+			if(direction.way.equals("left")){
+				currentRoom = null;
+			}
+		}
+
+		else if(currentRoom.id == 4){
+			if(direction.way.equals("left")){
+				currentRoom = room3;
+			}
+		}
+	}
+
+	public static Room makeRoom()
+	{
+		int numOfConnections = Dylan.nextInt(3)+1;
+		String[] theString = new String[numOfConnections];
+		Room room = new Room(0,toRooms, theString);
+		return room;
+	}
+
+	public static String[] getWayString(int _num)
+	{
+		String[] theString = new String[_num];
+		for(int i = 0 ; i < _num ; i++)
+		{
+			int num = Dylan.nextInt(5)+1;
+			if(num == 1)
+			{
+				theString[i] = "Stairs";
+			}
+			else if(num == 2)
+			{
+				theString[i] = "Window";
+			}
+			else if(num == 3)
+			{
+				theString[i] = "Door";
+			}
+			else if(num == 4)
+			{
+				theString[i] = "dank miserable-looking hallway that's probably roach infested";
+			}
+			else if(num == 5)
+			{
+				theString[i] = "cliff";
+			}
+		}
+		return theString;
+	}
+}
