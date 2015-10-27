@@ -7,4 +7,4 @@ It was the year 20YY. The evil scientist, Dr. Ellen Vil, alomst had his evil cre
 THE ADVENTURES OF JIM MAN: CAKE BAKER EXTRAORDINAIRE
 BOOK 1: THE CKAE OF DEATH EVIL
 
-IT was a cool, crisp sunny summer day.
+IT was a cool, crisp sunny summer day....
