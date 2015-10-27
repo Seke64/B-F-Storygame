@@ -11,4 +11,9 @@ public class Item extends Entity
     desc = _desc;
     maxCount = _maxCount;
   }
+  
+  public String toString()
+  {
+    return name + " (ID: " + devName + ") - " + desc;
+  }
 }
