@@ -3,6 +3,8 @@ import java.util.*;
 public class Invt
 {
   private ArrayList<ItemStack> items;
+  private Weapon weapon = null;
+  private Armor armor = null;
 
   public Invt()
   {
@@ -18,28 +20,27 @@ public class Invt
     {
       if (add.devName.equals(i.itemStack.devName))
       {
-		if (i.whatIsLeftOver(num) <= 0)
-		{
+	if (i.whatIsLeftOver(num) <= 0)
+	{
           i.add(num);
           num -= num;
-	    }
+	}
 
-	    else
-	    {
-		  placeToAdd = index; Dfl.out("1: " + placeToAdd);
-	      int addNow = (num - i.whatIsLeftOver(num));
-		  i.add(addNow);
-		  num -= addNow;
-		}
+	else
+	{
+	  placeToAdd = index; Dfl.out("1: " + placeToAdd);
+	  int addNow = (num - i.whatIsLeftOver(num));
+	  i.add(addNow);
+	  num -= addNow;
+	}
       }
-
       index++;
     }
 
 	if (placeToAdd == -1)
 	  placeToAdd = items.size();
 
-	Dfl.out("2: " + placeToAdd);
+        Dfl.out("2: " + placeToAdd);
     while (num > 0)
     {
       if (num > add.maxCount)
@@ -57,6 +58,27 @@ public class Invt
       placeToAdd++;
     }
   }
+  
+  public boolean equipWeapon(Weapon w)
+  {
+  	if (weapon is in invt)
+  	weapon = w;
+  }
+  
+  public void unEquipWeapon()
+  {
+  	weapon = null;
+  }
+  
+  public boolean equipAromor(Armor a)
+  {
+  	armor = a;
+  }
+  
+  public void unequipArmor()
+  {
+  	armor = null;
+  }
 
   public String toString()
   {
@@ -64,13 +86,23 @@ public class Invt
 
     for (ItemStack is: items)
     {
-      out += "\n" + is;
+      out += "\n " + is;
+    }
+    
+    if (weapon != null)
+    {
+    	out += "Weapon: " + weapon;
+    }
+    
+    if (armor != null)
+    {
+    	out += "Armor: " + armor;
     }
 
     if (out.equals("Inventory:"))
     {
-		out += "\nYou have no items.";
-	}
+      out += "\nYou have no items.";
+    }
 
     return out;
   }
