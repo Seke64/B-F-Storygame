@@ -1,4 +1,4 @@
-public class Hero extends Character 
+public class Hero extends GameCharacter 
 {
 	public int curHp;
 	public int level;
