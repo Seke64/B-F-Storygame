@@ -3,11 +3,11 @@ public class GameCharacter extends Entity
   protected int[] baseStats;
   
   public static final String[] baseStatsNames = {"Max HP", "Attack", "Defense", "Speed", "Luck"};
-  public static final MHP = 0, ATT = 1, DEF = 2, SPD = 3, LUC = 4;
+  public static final int MHP = 0, ATT = 1, DEF = 2, SPD = 3, LUC = 4;
   
   public GameCharacter(String _name, int[] _baseStats)
   {
-    super(_name)
+    super(_name);
     baseStats = _baseStats;
   }
   
