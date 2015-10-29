@@ -46,6 +46,6 @@ public class ItemStack
 
   public String toString()
   {
-    return "(" + numItems + ") " + itemStack.name + "- " + itemStack.desc;
+    return "(" + numItems + ") " + itemStack.name + " (ID: " + itemStack.devName + ") - " + itemStack.desc;
   }
 }
