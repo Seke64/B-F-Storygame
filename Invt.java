@@ -10,38 +10,43 @@ public class Invt
   {
 	  items = new ArrayList<ItemStack>();
   }
-  
+
   public void removeItem(Item remove, int num)
   {
   	int count = 0;
-  	
+  	int start = -1;
+
   	for (ItemStack i: items)
   	{
   		if (i.itemStack.devName.equals(remove.devName))
   		{
+			if (count == 0)
+				start = items.indexOf(i);
   			count += i.numItems;
-  			
   		}
   	}
-  	
-  	while (items.contains(remove))
+
+  	while (items.size() > 0 && items.get(start).itemStack.devName.equals(remove.devName))
   	{
-  		items.remove(remove);
+  		items.remove(start);
   	}
-  	
+
+  	Dfl.out("Invt: " + items);
+
   	if (count - num > 0)
   	{
-  		addItem(remove, count - num)
+  		addItem(remove, count - num);
   	}
   }
 
   public void addItem(Item add, int num)
   {
   	if (num < 0)
-  	{
-  		removeItem(add, -1 * num)
+  	{Dfl.test(1);
+  		removeItem(add, -1 * num);
+  		return;
   	}
-  	
+
 	int index = 0;
 	int placeToAdd = -1;
 
@@ -57,7 +62,7 @@ public class Invt
 
 	else
 	{
-	  placeToAdd = index; Dfl.out("1: " + placeToAdd);
+	  placeToAdd = index;
 	  int addNow = (num - i.whatIsLeftOver(num));
 	  i.add(addNow);
 	  num -= addNow;
@@ -69,7 +74,6 @@ public class Invt
 	if (placeToAdd == -1)
 	  placeToAdd = items.size();
 
-        Dfl.out("2: " + placeToAdd);
     while (num > 0)
     {
       if (num > add.maxCount)
@@ -87,23 +91,23 @@ public class Invt
       placeToAdd++;
     }
   }
-  
-  public boolean equipWeapon(Weapon w)
+
+  public void equipWeapon(Weapon w)
   {
-  	if (weapon is in invt)
+  	//if (weapon is in invt)
   	weapon = w;
   }
-  
+
   public void unEquipWeapon()
   {
   	weapon = null;
   }
-  
-  public boolean equipAromor(Armor a)
+
+  public void equipAromor(Armor a)
   {
   	armor = a;
   }
-  
+
   public void unequipArmor()
   {
   	armor = null;
@@ -117,15 +121,15 @@ public class Invt
     {
       out += "\n " + is;
     }
-    
+
     if (weapon != null)
     {
-    	out += "Weapon: " + weapon;
+    	out += "\nWeapon: " + weapon;
     }
-    
+
     if (armor != null)
     {
-    	out += "Armor: " + armor;
+    	out += "\nArmor: " + armor;
     }
 
     if (out.equals("Inventory:"))
