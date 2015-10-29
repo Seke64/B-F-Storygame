@@ -7,7 +7,7 @@ public class InvtTest
     while (true)
     {
   		Dfl.out(invt + "\n\n");
-  		Dfl.line("Example: add [name] [devName] [desc] [maxCount] [num]\nInput:\n> ");
+  		Dfl.line("Example: add [name] [maxCount] [num]\nequip weapon [name] [maxCount] [num]\nInput:\n> ");
   		String input = Keyboard.readString();
 
 	  	Dfl.newLine();
@@ -20,6 +20,13 @@ public class InvtTest
   		else if (input.split(" ")[0].equals("add"))
   		{
   			invt.addItem(new Item(input.split(" ")[1], input.split(" ")[1], input.split(" ")[1], Integer.parseInt(input.split(" ")[2])), Integer.parseInt(input.split(" ")[3]));
+  		}
+  		
+  		else if (input.split(" ")[0].equals("equip") && input.split(" ")[1].equals("weapon"))
+  		{
+  			Weapon w = new Weapon(input.split(" ")[2], input.split(" ")[2], input.split(" ")[2], Integer.parseInt(input.split(" ")[3])), Integer.parseInt(input.split(" ")[4]);
+  			invt.addItem(w);
+  			invt.equipWeapon(w);
   		}
 
   		else
