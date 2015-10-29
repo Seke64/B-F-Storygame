@@ -13,11 +13,35 @@ public class Invt
   
   public void removeItem(Item remove, int num)
   {
+  	int count = 0;
   	
+  	for (ItemStack i: items)
+  	{
+  		if (i.itemStack.devName.equals(remove.devName))
+  		{
+  			count += i.numItems;
+  			
+  		}
+  	}
+  	
+  	while (items.contains(remove))
+  	{
+  		items.remove(remove);
+  	}
+  	
+  	if (count - num > 0)
+  	{
+  		addItem(remove, count - num)
+  	}
   }
 
   public void addItem(Item add, int num)
   {
+  	if (num < 0)
+  	{
+  		removeItem(add, -1 * num)
+  	}
+  	
 	int index = 0;
 	int placeToAdd = -1;
 
