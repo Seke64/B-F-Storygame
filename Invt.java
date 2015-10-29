@@ -10,6 +10,11 @@ public class Invt
   {
 	  items = new ArrayList<ItemStack>();
   }
+  
+  public void removeItem(Item remove, int num)
+  {
+  	
+  }
 
   public void addItem(Item add, int num)
   {
